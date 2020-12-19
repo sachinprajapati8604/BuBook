@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Mukta+Vaani:wght@300&family=Nunito+Sans&family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Mukta Vaani', sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
+}
+html {
+    scroll-behavior: smooth;
+  }
+  .logo {
+      width: 200px;
+      margin: auto;
+  }
+  .logo img{
+      width: 100%;
+      height: 40px;
+  }
+
+  .card-text {
+    text-align: justify;
+  }
+
+ 
+  .jumbotext{
+    font-size: 18px;
+}
+.simgdiv{
+    height: 180px;
+	position:relative;
+    border: 1px solid #fff;
+    overflow: hidden;
+    padding: 0px 0px;
+}
+
+.simgdiv img{
+    width:100%;
+	height: 100%;
+	object-fit: fill;
+	box-sizing: border-box;
+    background: linear-gradient(to bottom, rgba(0,0,0,.6), rgba(0,0,0,.5)),  center no-repeat;
+    transition: transform 2s linear;
+    overflow: hidden;
+}
+.simgdiv img:hover{
+    transform: scale(1.1);
+   
+}
+
+.card-title{
+    text-transform: uppercase;
+    letter-spacing: 0.05rem;
+    
+        color: #000;
+        font-weight: bold;
+  
+}
+.card-title:hover{
+    color: #00f;
+}
+ /* for feedback file...... */
+  #outer{
+    height:300px;
+    width:400px;
+    border:1px solid;
+    margin:100px;
+    background-color:yellow;
+    
+    }
+    .but{
+    color:#fff;
+    background-color:#00f;
+    width:100px;
+    }
+    
+    .sac{
+        float:left;
+    }
+
+    /* drop down hover effect css */
+
+ul li.dropdown-menu{
+    min-width: 100%; /* Set width of the dropdown */
+    background: #f2f2f2;
+    display: none;
+    position: absolute;
+    z-index: 999;
+    left: 0;
+}
+ul li:hover .dropdown-menu{
+    display: block;	/* Display the dropdown */
+}
+ul li .dropdown-menu a{
+    display: block;
+}
+
+.btn:hover{
+    color: #fff;
+    background:#0dc043;
+}
+.list-unstyled li a:hover{
+    color: #fff;
+    background: #0dc043;
+}
+.dropdown-toggle::after {
+   
+    visibility: hidden;
+    margin-top: 0px;
+}
+
+.navbar-nav li a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #eb5b25;
+    transition: width .3s;
+}
+
+.navbar-nav li a:hover::after {
+    width: 100%;
+    transition: width .3s;
+}
+@media(max-width:640px){
+
+}

@@ -12,14 +12,7 @@
     <title>BUBooks.com</title>
 	
 	
-<style> 
-.card-text{
-text-align:justify;
-}
-.pics{
-height:180px;
-}
-</style>
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
   
@@ -28,6 +21,7 @@ height:180px;
 <!-- including navbar -->
 <?php 
 include "basic/navbar.php";
+include "dbconnect.php";
 ?>
 
 <!-- alert -->
@@ -39,100 +33,55 @@ include "basic/navbar.php";
   </div>
 </div>
 
-<!-- Making Card for adding books -->
-<h4 class="container my-2">Whole Syllabus , B.tech(CSE)</h4>
-<div class="container my-4">
+
+<!-- including syllabus...... -->
+<div class="container my-4 mx-auto">
+<div class="bg-info ">
+<h3 class="container my-3 p-3">Semester wise Syllabus, B.tech(CSE)</h3>
+ </div>
     <div class="row">
-      <div class="card col-md-3 mx-5" style="width: 18rem;">
-        <img src="image/buiet.png"  class="img-thumbnail mt-2 pics" alt="Responsive image">
-          <div class="card-body">
-            <h5 class="card-title">BU IET Syllabus for B.tech(CSE) </h5>
-            <p class="card-text"> view or download Syllabus click below</p>
-            <a href="https://drive.google.com/open?id=1SwSlgS2gfGXRZOs3qdrf8fMRq1D-1edd" class="btn btn-primary">Open </a>
-          </div>
-      </div>
-    </div> 
-</div>  
+  <?php
+  $sql = "SELECT * FROM `cse_syllabus`";
+  $result = mysqli_query($conn, $sql);
+  while ($row = mysqli_fetch_assoc($result)) {
+    $paper_id = $row['paper_id'];
+    $paper_sem = $row['paper_sem'];
+    $paper_name = $row['paper_name'];
+    $paper_desc = $row['paper_desc'];
+    $paper_link = $row['paper_link'];
+    $paper_notes_link = $row['paper_notes_link'];
+    $paper_img = $row['paper_img'];
+    $created = $row['created'];
 
-<!-- Making Card for adding books -->
-<h4 class="container " style="margin-top:70px;">Semester wise Syllabus, B.tech(CSE)</h4>
-<div class="container my-4">
-    <div class="row">
-      <div class="card col-md-3 mx-auto" style="width: 18rem;">
-        <img src="image/1st sem.png"  class="img-thumbnail mt-2 pics" alt="Responsive image">
-          <div class="card-body">
-            <h5 class="card-title">1st sem ,1st year</h5>
-            <p class="card-text"> view or download Syllabus click below</p>
-            <a href="https://drive.google.com/open?id=1SwSlgS2gfGXRZOs3qdrf8fMRq1D-1edd" class="btn btn-primary">Open </a>
-          </div>
-      </div>
+    if($paper_notes_link!=""){
+      $link2= '<a href="'.$paper_notes_link.'" class="btn btn-secondary">Easy Notes</a> ';
+    }
+    else{
+      $link2="";
+    }
 
-      <div class="card col-md-3 mx-auto  " style="width: 18rem;">
-        <img src="image/2ndsem.png" class="img-thumbnail mt-2 pics" alt="Responsive image">
-          <div class="card-body">
-            <h5 class="card-title">2nd sem ,1st year</h5>
-            <p class="card-text">view or download Syllabus click below </p> 
-            <a href="https://drive.google.com/open?id=1SkkMlNGoIj_Qcp5ij1f1NL2uoqr0sjN3" class="btn btn-primary">Open</a>
-          </div>
+    echo' <div class="card-deck my-2  col-md-4">
+    <div class="card">
+  <div class="simgdiv">  <a href="'.$paper_link.'">  <img src="image/'.$paper_img.'" class="card-img-top pics" alt="..."> </a> </div>
+      <div class="card-body">
+        <h5 class="card-title">'.$paper_name.'</h5>
+        <p class="card-text">'.$paper_desc.'</p>
       </div>
+      <div class="card-footer bg-light">
+        <a href="'.$paper_link.'" class="btn btn-info">Open Syllabus</a> 
+        '.$link2.' 
+      </div>
+    </div>
+  </div> ';
 
-      <div class="card col-md-3 mx-auto" style="width: 18rem;">
-        <img src="image/3rdsem.png" class="img-thumbnail mt-2 pics" alt="Responsive image">
-          <div class="card-body">
-            <h5 class="card-title" id="harry">3rd sem, 2nd year</h5>
-            <p class="card-text">view or download Syllabus click below</p>
-            <a href="https://drive.google.com/open?id=1SwSlgS2gfGXRZOs3qdrf8fMRq1D-1edd" class="btn btn-primary">Open </a>
-          </div>
-      </div>
-	  
-	  <div class="card col-md-3 mx-auto" style="width: 18rem;">
-        <img src="image/4thsem.png" class="img-thumbnail mt-2 pics" alt="Responsive image">
-          <div class="card-body">
-            <h5 class="card-title">4th sem,2nd year</h5>
-            <p class="card-text">view or download Syllabus click below </p>
-        	
-            <a href="https://drive.google.com/open?id=1SikoZ4KB72V92TL1hf-eqfelVn0Oexdu" class="btn btn-primary">Open</a>
-          </div>
-      </div>
 
-      <div class="card col-md-3 mx-auto" style="width: 18rem;">
-        <img src="image/5thsem.png" class="img-thumbnail mt-2 pics" alt="Responsive image">
-          <div class="card-body">
-            <h5 class="card-title" id="harry">5th sem ,3rd year</h5>
-            <p class="card-text"> view or download Syllabus click below<p>
-            <a href="https://drive.google.com/open?id=1SwSlgS2gfGXRZOs3qdrf8fMRq1D-1edd" class="btn btn-primary">Open</a>
-          </div>
-      </div>
- 
-          <div class="card col-md-3 mx-auto" style="width: 18rem;">
-              <img src="image/6thsem.png"  class="img-thumbnail mt-2 pics" alt="Responsive image">
-                <div class="card-body">
-                  <h5 class="card-title">6th sem ,3rd year</h5>
-                  <p class="card-text"> view or download Syllabus click below</p>
-                  <a href="https://drive.google.com/open?id=1P_AErwqWk3vnQVV7l4T2shKRxm8k1Wle" class="btn btn-primary">Open </a>
-                </div>
-            </div>
+  }
+  ?>
+    </div>
+    
+  </div>
 
-            <div class="card col-md-3 mx-auto" style="width: 18rem;">
-        <img src="image/7th sem.png"  class="img-thumbnail mt-2 pics" alt="Responsive image">
-          <div class="card-body">
-            <h5 class="card-title">7th sem ,4th year</h5>
-            <p class="card-text"> view or download Syllabus click below</p>
-            <a href="https://drive.google.com/file/d/1DAWsn454iGY8xVgJqb65vI_785vRr-oW/view?usp=sharing" class="btn btn-primary">Open </a>
-          </div>
-      </div>
 
-      <div class="card col-md-3 mx-auto" style="width: 18rem;">
-        <img src="image/8thsem.png"  class="img-thumbnail mt-2 pics" alt="Responsive image">
-          <div class="card-body">
-            <h5 class="card-title">8th sem ,4th year</h5>
-            <p class="card-text"> view or download Syllabus click below</p>
-            <a href="https://drive.google.com/open?id=1SxTZVUpyNa67CdIriLomz7FLpDivG21P" class="btn btn-primary">Open </a>
-          </div>
-      </div>
-</div>
-
-</div>
 
 
 

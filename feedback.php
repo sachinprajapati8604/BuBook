@@ -10,26 +10,8 @@
 
     <title>BUBooks.com</title>
 
-<style>
-#outer{
-height:300px;
-width:400px;
-border:1px solid;
-margin:100px;
-background-color:yellow;
-
-}
-.but{
-color:#fff;
-background-color:#00f;
-width:100px;
-}
-
-.sac{
-	float:left;
-}
-
-</style>
+    <link rel="stylesheet" href="css/style.css">
+<
 
 <script>
 function SubmitForm()

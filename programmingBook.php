@@ -11,106 +11,63 @@
     <title>BUBooks.com</title>
 	
 	
-<style> 
-.card-text{
-text-align:justify;
-}
-
-.pics{
-height:180px;
-}
-
-</style>
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
 
    <!-- including navbar -->
 <?php 
 include "basic/navbar.php";
+include 'dbconnect.php';
 ?>
- <!-- Making Card for adding books for programming -->
-<h3 class="container my-3">Programming Language books for B.tech(CSE)</h3>
+
+<!-- including  Programming books for all semester...... -->
 <div class="container my-4">
+<div class="bg-info ">
+<h3 class="container my-3 p-3">Programming Language books for B.tech(CSE)</h3>
+ </div>
     <div class="row">
-      <div class="card col-md-4 mx-auto" style="width: 18rem;">
-     <img src="image/C.jpg" class="img-thumbnail mt-2 pics" alt="Responsive image"/>
-     <div class="card-body">
-            <h5 class="card-title">C Language</h5>
-            <p class="card-text"> C language book complete reference</p>
-            <a href="https://drive.google.com/open?id=1OmemuuFSGtzKVeTpZhkQNGetVw82dQrV" class="btn btn-primary">Open Book</a>
-          </div>
+  <?php
+  $sql = "SELECT * FROM `cse_books` where book_id between 21 and 26";
+  $result = mysqli_query($conn, $sql);
+  while ($row = mysqli_fetch_assoc($result)) {
+    $book_id = $row['book_id'];
+    $book_sem = $row['book_sem'];
+    $book_name = $row['book_name'];
+    $book_desc = $row['book_desc'];
+    $book_link = $row['book_link'];
+    $book_notes_link = $row['book_notes_link'];
+    $book_img = $row['book_img'];
+    $created = $row['created'];
+
+    if($book_notes_link!=""){
+      $link2= '<a href="'.$book_notes_link.'" class="btn btn-secondary">Easy Notes</a> ';
+    }
+    else{
+      $link2="";
+    }
+    
+
+    echo' <div class="card-deck my-2  col-md-4">
+    <div class="card">
+    <div class="simgdiv">  <a href="'.$book_link.'">  <img src="image/'.$book_img.'" class="card-img-top pics" alt="..."> </a> </div>
+      <div class="card-body">
+        <h5 class="card-title">'.$book_name.'</h5>
+        <p class="card-text">'.$book_desc.'</p>
       </div>
-
-      <div class="card col-md-4 mx-auto" style="width: 18rem;">
-        <img src="image/JAVA.jpg" class="img-thumbnail mt-2 pics" alt="Responsive image">
-          <div class="card-body">
-           <h5 class="card-title">Java </h5>
-            <p class="card-text"> Java complete reference</p>
-            <a href="https://drive.google.com/open?id=1OgOY0Wrf9n8Mjkg1ROPRr6RfNmbxH5a2" class="btn btn-primary">Open Book</a>
-          </div>
+      <div class="card-footer bg-light">
+        <a href="'.$book_link.'" class="btn btn-info">Open Book</a> 
+        '.$link2.' 
       </div>
-
-      <div class="card col-md-4 mx-auto" style="width: 18rem;">
-        <img src="image/python.jpg" class="img-thumbnail mt-2 pics" alt="Responsive image">
-          <div class="card-body">
-<h5 class="card-title">Python</h5>
-            <p class="card-text"> Python Basic for beginners complete reference
-</p>
-            <a href="https://drive.google.com/open?id=1OcuDo04w-P6ICMZh60QOMXkX1qKhpGEw" class="btn btn-primary">Open Book</a>
-          </div>
-      </div>
-	  
-	  <div class="card col-md-4 mx-auto" style="width: 18rem;">
-        <img src="image/Android.jpg" type="jpg" class="img-thumbnail mt-2 pics" alt="Responsive image">
-          <div class="card-body">
-            <h5 class="card-title">Android </h5>
-            <p class="card-text">Android app development book
-</p>
-            <a href="https://drive.google.com/open?id=1P26vJoUgmeG5iYboLbrm-i-vLzi-mzsc" class="btn btn-primary">Open Book</a>
-          </div>
-      </div>
-
-      <div class="card col-md-4 mx-auto border-0" style="width: 18rem;">
-       
-      </div>
-      <div class="card col-md-4 mx-auto border-0" style="width: 18rem;">
-
-      </div>
-            
-
-</div>
-</div>
+    </div>
+  </div> ';
 
 
-<!-- Making Card for adding books for 2nd sem -->
-<h3 class="container my-4">Books For Web designing</h3>
-<div class="container my-4">
-    <div class="row">
-	
-      <div class="card col-md-4 mx-auto " style="width: 18rem;">
-        <img src="image/html5.png" class="img-thumbnail mt-2 pics" alt="Responsive image">
-  <div class="card-body">
-    <h5 class="card-title" >Html 5 tutorial</h5>
-    <p class="card-text">Cover html 5  tutorial for designing a website<p>
-    <a href="https://drive.google.com/open?id=1OqYYL8TgtvOW4JfjVDRx7Xduq0gNelaU" class="btn btn-primary">Open Book</a>
+  }
+  ?>
+    </div>
+    
   </div>
-</div>
-
-<div class="card col-md-4 mx-auto " style="width: 18rem;">
-  <img src="image/css.png" type="jpg" class="img-thumbnail mt-2 pics" alt="Responsive image">
-  <div class="card-body">
-    <h5 class="card-title">CSS </h5>
-    <p class="card-text">Cascading Style Sheets
-</p>
-    <a href="https://drive.google.com/open?id=14Mm5syZhOiGBBLQwdyf_oJm6YxGncGrh" class="btn btn-primary">Open Book</a>
-  </div>
-</div>
-        <div class="card col-md-4 mx-auto border-0" style="width: 18rem;">
-
-</div>
-
-</div>
-</div>
 
 
  

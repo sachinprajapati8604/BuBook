@@ -13,17 +13,8 @@
 <!-- ----Font family------->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,300&display=swap" rel="stylesheet">
 
-    <style>
-        .card-text {
-            text-align: justify;
-        }
-
-        .pics {
-            height: 180px;
-        }
-
-       
-    </style>
+    
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -43,25 +34,11 @@
             exploring the menu
         </div>
 
-
-        <div class="alert alert-danger mx-auto my-auto " role="alert">
-            Check out Corona Virus (COVID-19) cases in India 👉 <a href="https://www.worldometers.info/coronavirus/country/india/" class="btn btn-info mx-auto mx-auto" target="_blank">click here</a>
-        </div>
-
-        <div class="alert alert-info mx-auto" role="alert">
-            <?php
-            $var = date("d-m-Y , l,");
-
-            echo  " <b> Today is  $var </b>";
-
-            ?>
-        </div>
-
     </div>
     <div class="container mt-3">
-        <div class="jumbotron ">
+        <div class="jumbotron pb-1 pt-3">
             <h2 class="display-4" style="text-align:justify;">Welcome!</h2>
-            <p class="lead" style="text-align:justify; ">I love books and I love the internet, which means I'm always
+            <p class="lead jumbotext" style="text-align:justify; ">I love books and I love the internet, which means I'm always
                 looking for great sites about books. If you're reading this, you're probably the same way. The great
                 news is that there's also a huge online literary community to explore. Every site has its own flavor and
                 its own pizzaz. There's plenty of fun, diverse ways that you can engage with writing and reading.
@@ -72,13 +49,10 @@
                 books pdf for Student of BUNDELKHAND UNIVERSITY JHANSI for B.Tech(CSE) Student. There are many books out
                 there.<p>
 
-                    <button type="button" class="btn btn-outline-success mt-2 mx-auto " data-toggle="modal" data-target="#exampleModal">
-                        click here to download our android app
+                    <button type="button" class="btn btn-outline-success mt-2 mx-auto d-flex" data-toggle="modal" data-target="#exampleModal">
+                     <i class="fa fa-download" aria-hidden="true">  Download our App</i>
 
                     </button>
-
-
-
                     <!-- Modal -->
                     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog" role="document">
@@ -106,86 +80,13 @@
                         </div>
                     </div>
 
-
-
-
         </div>
     </div>
 
-    <!-- Making Card for adding books -->
+
     <div class="container my-2">
-        <h4 class="text-center border my-3 font-weight-bold">Books-5th Semester ,3rd year(CSE) </h4>
-        <div class="row">
-            <div class="col-md-4 my-2 ">
-                <div class="card mx-auto" style="width: 18rem;min-height:27rem;">
-                    <img src="image/daa.png" class="img-thumbnail mt-2 pics" alt="Responsive image">
-                    <div class="card-body">
-                        <h5 class="card-title">DAA By Coremen</h5>
-                        <p class="card-text">Introduction to Algorithms Third Edition,Thomas H. Cormen
-                            Charles E. Leiserson
-                            Ronald L. Rivest
-                            Clifford Stein</p>
-                        <a href="https://drive.google.com/open?id=11zOmaAELFVzyEnx53ss7bOHTrTX2SOJo" class="btn btn-primary ">Open Book</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 my-2 ">
-                <div class="card mx-auto" style="width: 18rem; min-height:27rem;">
-                    <img src="image/cd.png" class="img-thumbnail mt-2 pics" alt="Responsive image">
-                    <div class="card-body">
-                        <h5 class="card-title">CompilerDesign</h5>
-                        <p class="card-text"> By S. D. Ullman,We hope
-                            to make available the notes for each offering of compiler-related courses.</p> <br>
-                        <a href="https://drive.google.com/open?id=11WRXiSAwnSL_QCqvVYZB00v2m1KQ1Mwt" class="btn btn-primary">Open Book</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 my-2  ">
-                <div class="card mx-auto" style="width: 18rem;min-height:27rem;">
-                    <img src="image/cg.png" class="img-thumbnail mt-2 pics" alt="Responsive image">
-                    <div class="card-body">
-                        <h5 class="card-title " id="harry">Computer Graphics </h5>
-                        <p class="card-text">This is a PDF version of a free on-line book that is available at ......
-                            computer graphics, which would typically be taken by a computer science student in the third.
-                        </p>
-                        <a href="https://drive.google.com/open?id=1O1VXY6iOkltOv2BTzQ8hkDOA8S-30nj8" class="btn btn-primary">Open Book</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 my-2  ">
-                <div class="card mx-auto" style="width: 18rem;min-height:27rem;">
-                    <img src="image/ppl.png" class="img-thumbnail mt-2 pics" alt="Responsive image">
-                    <div class="card-body">
-                        <h5 class="card-title">PPL</h5>
-                        <p class="card-text">PPl Book & notes </p>
-                        <a href="https://drive.google.com/file/d/1MgArtBgJDVSGpM3ptEZ2k-SLr1Ymnz6h/view?usp=sharing" class="btn btn-primary">Open Notes</a> <br> <br>
-
-                        <a href="https://drive.google.com/open?id=1O0UQTp-fa8ly9bknXbCLKlJ0EpZnd7q-" class="btn btn-primary">Open Book</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 my-2 ">
-                <div class="card mx-auto" style="width: 18rem;min-height:27rem;">
-                    <img src="image/iepm.jpeg" class="img-thumbnail mt-2 pics" alt="Responsive image">
-                    <div class="card-body">
-                        <h5 class="card-title" id="harry">IEPM </h5>
-                        <p class="card-text"> IEPM book<p>
-                                <a href="https://drive.google.com/file/d/1LXhKUthTQ1fMNJYF7Izu6OPQPKFTp8O8/view?usp=sharing" class="btn btn-primary">Open Book</a>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </div>
-
-
-
-
-    <br>
-    <div class="container">
         <div class="alert alert-info mx-auto" role="alert">
-            <b> For more click on menu items 👇</b>
+            <b> Quick Access  👇</b>
         </div>
 
         <div class="p-4">
@@ -199,15 +100,65 @@
             </ol>
         </div>
 
-        <div class="p-4">
-            <h5 class="font-italic font-weight-bold">Write to us </h5>
-            <a class="btn btn-info btn-block font-weight-bold p-2 mt-3 mx-auto" type="button" href="feedback.php">Feedback</a>
-
-        </div>
+       
 
     </div>
     </div>
 
+
+   <!-- including books for 5th semester...... -->
+ <div class="container my-4">
+  <div class="bg-info ">
+<h3 class="container my-3 p-3">Books-5th Semester  3rd year(CSE)</h3>
+ </div> <hr>
+    <div class="row">
+  <?php
+  include 'dbconnect.php';
+  $sql = "SELECT * FROM `cse_books`";
+  $result = mysqli_query($conn, $sql);
+  while ($row = mysqli_fetch_assoc($result)) {
+    $book_id = $row['book_id'];
+    $book_sem = $row['book_sem'];
+    $book_name = $row['book_name'];
+    $book_desc = $row['book_desc'];
+    $book_link = $row['book_link'];
+    $book_notes_link = $row['book_notes_link'];
+    $book_img = $row['book_img'];
+    $created = $row['created'];
+    
+    if($book_notes_link!=""){
+      $link2= '<a href="'.$book_notes_link.'" class="btn btn-secondary">Easy Notes</a> ';
+    }
+    else{
+      $link2="";
+    }
+if($book_sem==5){
+    echo' <div class="card-deck my-2 col-md-4">
+    <div class="card">
+    <div class="simgdiv">  <a href="'.$book_link.'">  <img src="image/'.$book_img.'" class="card-img-top pics" alt="..."> </a> </div>
+      <div class="card-body">
+        <h5 class="card-title">'.$book_name.'</h5>
+        <p class="card-text">'.$book_desc.'</p>
+      </div>
+      <div class="card-footer bg-light">
+        <a href="'.$book_link.'" class="btn btn-info">Open Book</a>
+        '.$link2.' 
+      </div>
+    </div>
+  </div>';
+}
+  
+  }
+  ?>
+    </div>
+  </div>
+
+
+
+
+    <br>
+
+    
     <!-- including footer -->
     <?php
     include "basic/footer.php";
