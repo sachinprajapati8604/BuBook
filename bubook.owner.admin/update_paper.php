@@ -64,7 +64,7 @@ $paper_id=$_GET['paper_id'];
       $paper_link1=mysqli_real_escape_string($conn,$paper_link1);
       $paper_link2=mysqli_real_escape_string($conn,$paper_link2);
 
-      $sql="UPDATE `cse_papers` SET  `paper_sem`='$paper_sem',`paper_name`='$paper_title',`paper_desc`='$paper_detail',`paper_link`='.$paper_link1.',`paper_notes_link`='.$paper_link2.',`paper_img`='{$filename}',`created`=current_timestamp() where paper_id='$paper_id' ";
+      $sql="UPDATE `cse_papers` SET  `paper_sem`='$paper_sem',`paper_name`='$paper_title',`paper_desc`='$paper_detail',`paper_link`='$paper_link1',`paper_notes_link`='$paper_link2',`paper_img`='{$filename}',`created`=current_timestamp() where paper_id='$paper_id' ";
 
       $current_id = mysqli_query($conn, $sql) or die("<b>Error:</b> Problem on Image Insert<br/>" . mysqli_error($conn));
 

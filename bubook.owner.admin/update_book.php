@@ -64,7 +64,7 @@ $book_id=$_GET['book_id'];
       $book_link1=mysqli_real_escape_string($conn,$book_link1);
       $book_link2=mysqli_real_escape_string($conn,$book_link2);
 
-      $sql="UPDATE `cse_books` SET  `book_sem`='$book_sem',`book_name`='$book_title',`book_desc`='$book_detail',`book_link`='.$book_link1.',`book_notes_link`='.$book_link2.',`book_img`='{$filename}',`created`=current_timestamp() where book_id='$book_id' ";
+      $sql="UPDATE `cse_books` SET  `book_sem`='$book_sem',`book_name`='$book_title',`book_desc`='$book_detail',`book_link`='$book_link1',`book_notes_link`='$book_link2',`book_img`='{$filename}',`created`=current_timestamp() where book_id='$book_id' ";
 
       $current_id = mysqli_query($conn, $sql) or die("<b>Error:</b> Problem on Image Insert<br/>" . mysqli_error($conn));
 
